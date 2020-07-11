@@ -1,0 +1,8 @@
+{
+	"siteList": {
+		"defaultValue": "default,office,kitchen",
+		"dataType": "string",
+		"isSensitive": false,
+		"description": "Choose what site's to send hotword off. No spaces between sites."
+	}
+}

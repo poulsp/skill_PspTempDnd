@@ -1,1 +1,18 @@
-{}
+{
+  "startMyDnd": {
+    "default": [
+      "Okay, I will shup up."
+    ],
+    "short": [
+      "Okay, silence."
+    ]
+  },
+  "stopMyDnd": {
+    "default": [
+      "Okay, disable DND."
+    ],
+    "short": [
+      "Okay, disable DND."
+    ]
+  }
+}
