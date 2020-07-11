@@ -27,6 +27,15 @@ class PspTempDnd(AliceSkill):
 		super().onStart()
 		self._siteList = self.getConfig('siteList').split(',')
 
+	#-----------------------------------------------
+	def _publishDnd(self, onOff: bool):
+		if onOff:
+			for siteId in self._siteList:
+				self.publish(constants.TOPIC_HOTWORD_TOGGLE_OFF, payload=json.dumps({"siteId": siteId, "sessionId": ''}))
+		else:
+			for siteId in self._siteList:
+				self.publish(constants.TOPIC_HOTWORD_TOGGLE_ON, payload=json.dumps({"siteId": siteId, "sessionId": ''}))
+
 
 	#-----------------------------------------------
 	@IntentHandler('startMyDnd')
@@ -53,11 +62,12 @@ class PspTempDnd(AliceSkill):
 
 
 	#-----------------------------------------------
-	def _publishDnd(self, onOff: bool):
-		if onOff:
-			for siteId in self._siteList:
-				self.publish(constants.TOPIC_HOTWORD_TOGGLE_OFF, payload=json.dumps({"siteId": siteId, "sessionId": ''}))
-		else:
-			for siteId in self._siteList:
-				self.publish(constants.TOPIC_HOTWORD_TOGGLE_ON, payload=json.dumps({"siteId": siteId, "sessionId": ''}))
+	@IntentHandler('activateWakeWord')
+	def activateWakeWord(self, session: DialogSession, **_kwargs):
+		room 	= 'kitchen' if 'Room' not in session.slots else session.slots['Room']
 
+		wakeWord = {"siteId":room,"modelId":"hey_snips","modelVersion":"workflow-hey_snips_subww_feedback_10seeds-2018_12_04T12_13_05_evaluated_model_0002","modelType":"universal","currentSensitivity":0.5,"detectionSignalMs":1594070704748,"endSignalMs":1594070704748}
+
+		self.publish(constants.TOPIC_HOTWORD_DETECTED, payload=json.dumps(wakeWord))
+
+		self.endDialog(session.sessionId, '')

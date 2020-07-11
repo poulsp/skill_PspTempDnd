@@ -5,6 +5,21 @@
     "slotTypes": [],
     "intents": [
       {
+        "name": "activateWakeWord",
+        "description": "send wakeword to alice",
+        "enabledByDefault": true,
+        "utterances": ["activateWakeWord in {'kitchen':=>Room}"],
+        "slots": [
+            {
+              "name": "Room",
+              "description": "Which room",
+              "required": false,
+              "type": "Alice/Location",
+              "missingQuestion": ""
+            }
+        ]
+      },
+      {
         "name": "startMyDnd",
         "description": "Stop listening send a toggleOff",
         "enabledByDefault": true,
