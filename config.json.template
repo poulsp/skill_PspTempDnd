@@ -3,6 +3,6 @@
 		"defaultValue": "default,office,kitchen",
 		"dataType": "string",
 		"isSensitive": false,
-		"description": "Choose what site's to send hotword off. No spaces between sites."
+		"description": "Choose what site's to send hotword off. No spaces between sites. Maybee for some of the sites you should use uuid."
 	}
 }
