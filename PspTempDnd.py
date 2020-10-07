@@ -1,3 +1,6 @@
+# ~/.local/bin/projectalice-sk validate --paths ~/ProjectAlice/skills/PspTempDnd
+
+
 from datetime import timedelta
 import threading
 import json
