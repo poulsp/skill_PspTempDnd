@@ -58,16 +58,16 @@ class PspTempDnd(AliceSkill):
 	@IntentHandler('startMyDnd')
 	def startMyDnd(self, session: DialogSession, **_kwargs):
 		self._doLater(True)
-		self.endDialog(session.sessionId, self.randomTalk('startMyDnd'))
-		#self.endDialog(session.sessionId, '')
+		#self.endDialog(session.sessionId, self.randomTalk('startMyDnd'))
+		self.endDialog(session.sessionId, '')
 
 
 	#-----------------------------------------------
 	@IntentHandler('stopMyDnd')
 	def stopMyDnd(self, session: DialogSession, **_kwargs):
 		self._doLater(False)
-		self.endDialog(session.sessionId, self.randomTalk('stopMyDnd'))
-		#self.endDialog(session.sessionId, '')
+		#self.endDialog(session.sessionId, self.randomTalk('stopMyDnd'))
+		self.endDialog(session.sessionId, '')
 
 
 	#-----------------------------------------------
