@@ -1,50 +1,36 @@
 {
-    "skill": "PspTempDnd",
-    "description": "My own temporary dnd psptempdnd.",
-    "icon": "time",
-    "slotTypes": [],
-    "intents": [
-      {
-        "name": "startMyDnd",
-        "description": "Stop listening send a toggleOff",
-        "enabledByDefault": true,
-        "utterances": [
-          "no microphone",
-          "stop microphone",
-          "close microphone",
-          "no mic",
-          "no mike",
-          "microphone off",
-          "microphone dropout",
-          "microphone hang up",
-          "microphone hold back",
-          "start DND",
-          "do DND",
-          "DND",
-          "begin do not disturb",
-          "hang up",
-          "hold back",
-          "dropout",
-          "call Beck",
-          "old back",
-          "Holbeck"
-        ],
-        "slots": []
-      },
-      {
-        "name": "stopMyDnd",
-        "description": "Begin listening again send atoggleOn",
-        "enabledByDefault": true,
-        "utterances": [
-          "stop DND",
-          "drop DND",
-          "cancel DND",
-          "cancel do not disturb",
-          "stop do not disturb",
-          "continue listen",
-          "continue listening"
-        ],
-        "slots": []
-      }
-    ]
+		"skill": "PspTempDnd",
+		"description": "My own temporary dnd psptempdnd.",
+		"icon": "time",
+		"slotTypes": [],
+		"intents": [
+			{
+				"name": "startMyDnd",
+				"description": "Stop listening send a toggleOff",
+				"enabledByDefault": true,
+				"utterances": [
+					"no microphone",
+					"stop microphone",
+					"close microphone",
+					"no mic",
+					"no mike",
+					"microphone off",
+					"start DND",
+					"DND"
+				],
+				"slots": []
+			},
+			{
+				"name": "stopMyDnd",
+				"description": "Begin listening again send a toggleOn",
+				"enabledByDefault": true,
+				"utterances": [
+					"stop DND",
+					"drop DND",
+					"cancel DND",
+					"microphone on"
+				],
+				"slots": []
+			}
+		]
 }
